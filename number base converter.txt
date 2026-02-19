@@ -1,0 +1,81 @@
+# conversion from denary to hex
+def d_h(n):
+    return hex(int(n))
+
+# conversion from binary to hex
+def b_h(b):
+    return hex(int(b, 2))
+
+# conversion from binary to denary
+def b_d(b):
+    return int(b, 2)
+
+# conversion from denary to binary
+def d_b(d):
+    return bin(int(d))
+
+# conversion from hex to binary
+def h_b(h):
+    return bin(int(h, 16))
+
+# conversion from hex to decimal
+def h_d(h):
+    return int(h, 16)
+
+
+# main program
+import tkinter as tk
+from tkinter import messagebox
+root = tk.Tk()
+root.title("Number Base Converter")
+root.geometry("400x250")
+root.configure(bg="#d3e893")
+#input stage
+tk.Label(root, text="Enter value:",bg = "#d3e893",fg = "#243b2c").pack()
+entry = tk.Entry(root)
+entry.pack()
+
+# output stage
+result_label = tk.Label(root, text="", font=("Arial", 12))
+result_label.pack(pady=10)
+
+# conversion stage
+def convert(op):
+    try:
+        value = entry.get()
+
+        if op == "dh":
+            result = d_h(value)
+        elif op == "bh":
+            result = b_h(value)
+        elif op == "bd":
+            result = b_d(value)
+        elif op == "db":
+            result = d_b(value)
+        elif op == "hb":
+            result = h_b(value)
+        elif op == "hd":
+            result = h_d(value)
+        else:
+            result = "Invalid operation"
+
+        result_label.config(text=f"Result: {result}",bg = "#d3e893", fg = "#243b2c")
+
+    except ValueError:
+        messagebox.showerror(
+            "Error",
+            "Invalid input for the selected conversion."
+        )
+
+# buttons
+tk.Button(root, text="Binary → Hex",bg = "#f9eed6",fg = "#243b2c", command=lambda: convert("bh")).pack()
+tk.Button(root, text="Hex → Binary",bg = "#f9eed6",fg = "#243b2c", command=lambda: convert("hb")).pack()
+tk.Button(root, text="Hex → Decimal",bg = "#f9eed6",fg = "#243b2c", command=lambda: convert("hd")).pack()
+tk.Button(root, text="Decimal → Hex",bg = "#f9eed6",fg = "#243b2c", command=lambda: convert("dh")).pack()
+tk.Button(root, text="Decimal → Binary",bg = "#f9eed6",fg = "#243b2c", command=lambda: convert("db")).pack()
+tk.Button(root, text="Binary → Decimal",bg = "#f9eed6",fg = "#243b2c", command=lambda: convert("bd")).pack()
+
+
+
+
+root.mainloop()
