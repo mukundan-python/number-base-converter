@@ -44,9 +44,9 @@ The program:
 Example:
 
 Binary input:
-
+1010
 Decimal output:
-
+10
 ---
 
 ## Technologies Used
