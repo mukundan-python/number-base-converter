@@ -1,29 +1,81 @@
 # Number Base Converter
 
-A Python GUI application built using Tkinter that converts between:
+A GUI-based number base conversion tool built using Python and Tkinter.
 
-- Binary ↔ Decimal
-- Binary ↔ Hexadecimal
-- Decimal ↔ Hexadecimal
+This application allows users to convert values between:
+
+- Binary (Base 2)
+- Decimal (Base 10)
+- Hexadecimal (Base 16)
+
+---
+
+## Overview
+
+This project was created to demonstrate understanding of:
+
+- Number base systems
+- Python data type conversion
+- GUI development using Tkinter
+- Input validation and error handling
+
+The program converts user input into decimal internally and then reformats it into the selected base.
+
+---
 
 ## Features
 
-- Simple graphical interface
+- Clean graphical interface
+- Conversion between all three number systems
 - Error handling for invalid inputs
-- Supports multiple base conversions
+- Structured layout using Tkinter
+
+---
+
+## How It Works
+
+The program:
+
+1. Takes user input.
+2. Converts the input into decimal using Python’s `int()` function.
+3. Converts the decimal value into the desired base using `format()` or built-in base functions.
+4. Displays the result in the interface.
+
+Example:
+
+Binary input:
+
+Decimal output:
+
+---
 
 ## Technologies Used
 
-- Python
-- Tkinter
+- Python 3
+- Tkinter (standard Python GUI library)
+
+---
 
 ## How to Run
 
-1. Make sure Python is installed.
-2. Download the file.
+1. Install Python (3.x).
+2. Download or clone the repository.
 3. Run:
 
-   python number_base_converter.py
+
+---
+
+## Possible Improvements
+
+- Add input field validation (restrict characters based on selected base)
+- Remove base prefixes automatically (0b / 0x)
+- Improve UI styling
+- Add automated unit testing
+- Expand to support more number systems (e.g. octal)
+
+---
 
 ## Author
+
 Mukundan
+A-Level Computer Science Student
